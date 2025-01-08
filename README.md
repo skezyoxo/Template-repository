@@ -1,90 +1,146 @@
-# Second Brain Private
+# Next.js Authentication Template
 
-A personal knowledge management system built with Next.js, TypeScript, and PostgreSQL.
-
-## Overview
-
-Second Brain Private is a secure and efficient personal knowledge management system that helps you organize, store, and retrieve your digital information. Built with modern web technologies and following best practices for security and scalability.
+A modern, production-ready template for Next.js applications with built-in authentication, user management, and role-based access control.
 
 ## Features
 
-- 🔐 Secure user authentication and authorization
-- 👥 Role-based access control
-- 🌐 Modern, responsive interface
-- 🎨 Dark/Light theme support
-- 🚀 Built with performance in mind
-- 📱 Mobile-friendly design
+- 🔐 **Authentication**
+  - Email/Password authentication
+  - OAuth (GitHub) integration
+  - Session management
+  - Protected routes
+  - Role-based access control
 
-## Tech Stack
+- 🎨 **UI/UX**
+  - Modern, responsive design
+  - Dark mode support
+  - Loading states
+  - Error handling
+  - Toast notifications
+  - Form validation
 
-- **Frontend**: Next.js 14, React, TypeScript
-- **Styling**: Tailwind CSS, shadcn/ui components
-- **Database**: PostgreSQL with Prisma ORM
-- **Authentication**: JWT-based auth
-- **Deployment**: Vercel (recommended)
+- 🛠 **Technical Stack**
+  - Next.js 14 (App Router)
+  - TypeScript
+  - Prisma (Database ORM)
+  - NextAuth.js (Authentication)
+  - Tailwind CSS (Styling)
+  - Zod (Validation)
 
-## Quick Start
+- 🔧 **Development**
+  - ESLint configuration
+  - Prettier formatting
+  - Husky pre-commit hooks
+  - Jest testing setup
+  - VSCode configuration
 
-1. **Clone the repository**
+## Getting Started
 
+1. Clone this template:
    ```bash
-   git clone https://github.com/skezyoxo/second-brain-private.git
-   cd second-brain-private
+   git clone [your-template-url]
    ```
 
-2. **Install dependencies**
-
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-3. **Set up environment variables**
-
+3. Set up your environment variables:
    ```bash
    cp .env.example .env
-   # Update .env with your database credentials and other configurations
    ```
+   Then edit `.env` with your values:
+   - Generate AUTH_SECRET: `openssl rand -base64 32`
+   - Set up GitHub OAuth (see below)
+   - Configure your database URL
 
-4. **Set up the database**
-
+4. Set up the database:
    ```bash
    npx prisma migrate dev
+   npx prisma db seed
    ```
 
-5. **Start the development server**
+5. Start the development server:
    ```bash
    npm run dev
    ```
 
-Visit `http://localhost:3000` to see the application.
+## GitHub OAuth Setup
 
-## Documentation
+1. Go to GitHub Developer Settings
+2. Create a new OAuth App
+3. Set Homepage URL to `http://localhost:3000`
+4. Set Authorization callback URL to `http://localhost:3000/api/auth/callback/github`
+5. Copy Client ID and Client Secret to your `.env` file
 
-Comprehensive documentation is available in the [docs](./docs) directory:
+## Environment Variables
 
-- [Setup Guide](./docs/SETUP.md) - Detailed setup instructions
-- [API Documentation](./docs/API.md) - API endpoints and usage
-- [Database Documentation](./docs/DATABASE.md) - Database schema and relationships
-- [Deployment Guide](./docs/DEPLOYMENT.md) - Deployment instructions
-- [Contributing Guidelines](./docs/CONTRIBUTING.md) - How to contribute
+Required environment variables:
+- \`DATABASE_URL\`: Your PostgreSQL database URL
+- \`AUTH_SECRET\`: Random string for session encryption
+- \`GITHUB_ID\`: GitHub OAuth Client ID
+- \`GITHUB_SECRET\`: GitHub OAuth Client Secret
+
+## Database Schema
+
+The template includes:
+- User management
+- Role-based access control
+- Session handling
+- OAuth account linking
+
+See \`prisma/schema.prisma\` for the complete schema.
+
+## Authentication Flows
+
+1. **Email/Password**
+   - Sign up with email, password, and name
+   - Sign in with email and password
+   - Password hashing with bcryptjs
+
+2. **OAuth (GitHub)**
+   - One-click sign in
+   - Account linking
+   - Profile synchronization
+
+## Customization
+
+1. **Branding**
+   - Update app name in \`app/layout.tsx\`
+   - Modify theme in \`tailwind.config.js\`
+   - Replace icons and logos
+
+2. **Database**
+   - Modify \`prisma/schema.prisma\` for your models
+   - Update seed data in \`prisma/seed.ts\`
+
+3. **Authentication**
+   - Add more OAuth providers in \`app/auth.ts\`
+   - Modify user roles in database seed
+   - Customize protected routes in middleware
+
+## Project Structure
+
+```
+├── app/                  # Next.js app router
+│   ├── api/             # API routes
+│   ├── auth/            # Auth pages
+│   └── dashboard/       # Protected routes
+├── components/          # React components
+├── lib/                 # Utilities
+├── prisma/             # Database setup
+└── public/             # Static files
+```
 
 ## Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](./docs/CONTRIBUTING.md) for details.
+Contributions are welcome! Please read our contributing guidelines.
 
 ## License
 
-[MIT License](LICENSE)
+MIT License - feel free to use this template for any project.
 
 ## Support
 
-If you encounter any issues or have questions, please:
-
-1. Check the [documentation](./docs)
-2. Create an issue in the repository
-
-## Acknowledgments
-
-- Built with [Next.js](https://nextjs.org/)
-- UI components from [shadcn/ui](https://ui.shadcn.com/)
-- Database ORM by [Prisma](https://www.prisma.io/)
+If you find this template helpful, please give it a star ⭭
