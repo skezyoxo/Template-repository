@@ -13,12 +13,19 @@ export const { auth, handlers: authHandler } = NextAuth({
   ],
   pages: {
     signIn: '/auth/login',
-    // error: '/auth/error', // Error code passed in query string as ?error=
-    // signOut: '/auth/signout',
-    // verifyRequest: '/auth/verify-request', // (used for check email message)
+    error: '/auth/error',
   },
   callbacks: {
+    async signIn({ user, account, profile }) {
+      console.log('Sign in callback:', { user, account, profile });
+      return true;
+    },
+    async session({ session, user }) {
+      console.log('Session callback:', { session, user });
+      return session;
+    },
     authorized({ auth, request: { nextUrl } }) {
+      console.log('Authorization check:', { auth, url: nextUrl.toString() });
       const isLoggedIn = !!auth?.user;
       const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
 
@@ -31,4 +38,5 @@ export const { auth, handlers: authHandler } = NextAuth({
       return true;
     },
   },
+  debug: true,
 });
