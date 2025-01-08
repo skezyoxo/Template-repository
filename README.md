@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Second Brain Private
 
-## Getting Started
+A personal knowledge management system built with Next.js, TypeScript, and PostgreSQL.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Second Brain Private is a secure and efficient personal knowledge management system that helps you organize, store, and retrieve your digital information. Built with modern web technologies and following best practices for security and scalability.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- 🔐 Secure user authentication and authorization
+- 👥 Role-based access control
+- 🌐 Modern, responsive interface
+- 🎨 Dark/Light theme support
+- 🚀 Built with performance in mind
+- 📱 Mobile-friendly design
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tech Stack
 
-## Learn More
+- **Frontend**: Next.js 14, React, TypeScript
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Database**: PostgreSQL with Prisma ORM
+- **Authentication**: JWT-based auth
+- **Deployment**: Vercel (recommended)
 
-To learn more about Next.js, take a look at the following resources:
+## Quick Start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/skezyoxo/second-brain-private.git
+   cd second-brain-private
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Update .env with your database credentials and other configurations
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Set up the database**
+   ```bash
+   npx prisma migrate dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. **Start the development server**
+   ```bash
+   npm run dev
+   ```
+
+Visit `http://localhost:3000` to see the application.
+
+## Documentation
+
+Comprehensive documentation is available in the [docs](./docs) directory:
+
+- [Setup Guide](./docs/SETUP.md) - Detailed setup instructions
+- [API Documentation](./docs/API.md) - API endpoints and usage
+- [Database Documentation](./docs/DATABASE.md) - Database schema and relationships
+- [Deployment Guide](./docs/DEPLOYMENT.md) - Deployment instructions
+- [Contributing Guidelines](./docs/CONTRIBUTING.md) - How to contribute
+
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guidelines](./docs/CONTRIBUTING.md) for details.
+
+## License
+
+[MIT License](LICENSE)
+
+## Support
+
+If you encounter any issues or have questions, please:
+1. Check the [documentation](./docs)
+2. Create an issue in the repository
+
+## Acknowledgments
+
+- Built with [Next.js](https://nextjs.org/)
+- UI components from [shadcn/ui](https://ui.shadcn.com/)
+- Database ORM by [Prisma](https://www.prisma.io/)
