@@ -17,7 +17,7 @@ export const {
     }),
   ],
   pages: {
-    signIn: '/auth/signin',
+    signIn: '/auth/login',
     // error: '/auth/error', // Error code passed in query string as ?error=
     // signOut: '/auth/signout',
     // verifyRequest: '/auth/verify-request', // (used for check email message)
