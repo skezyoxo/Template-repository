@@ -10,6 +10,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { Boxes } from 'lucide-react';
 import { ThemeToggle } from '@/components/theme-switcher';
+import { ProfileMenu } from '@/components/profile-menu';
 import { cn } from '@/lib/utils';
 
 export function Navbar() {
@@ -59,6 +60,7 @@ export function Navbar() {
               </NavigationMenuList>
             </NavigationMenu>
             <ThemeToggle />
+            <ProfileMenu />
           </div>
         </div>
       </div>

@@ -2,35 +2,25 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Navbar } from '@/components/navbar';
-import { ThemeProvider } from '@/app/providers';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Application Template',
-  description: 'Your application description',
+  title: 'Second Brain',
+  description: 'Your personal knowledge management system',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-          themes={['light', 'dark', 'rose', 'blue', 'green', 'purple', 'orange']}
-        >
-          <div className="min-h-screen bg-background">
+        <Providers>
+          <div className="relative flex min-h-screen flex-col">
             <Navbar />
-            <main className="container py-8">{children}</main>
+            <main className="flex-1">{children}</main>
           </div>
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );
