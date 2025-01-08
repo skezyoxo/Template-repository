@@ -1,0 +1,23 @@
+[33mcommit b431d0b1daff0a76b81833742c24a1c3558fc938[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: skezyoxo <sarah.tollemache@hotmail.com>
+Date:   Wed Jan 8 17:46:57 2025 +1000
+
+    chore: update gitignore with env and IDE files
+
+[33mcommit 771ca408bd79da39d139d3610956ee01b4f1c329[m
+Author: skezyoxo <sarah.tollemache@hotmail.com>
+Date:   Wed Jan 8 17:43:29 2025 +1000
+
+    feat: update app configuration and layout
+
+[33mcommit 3baa0d0ffdb93f40b26aca2ec4125f288696757e[m
+Author: skezyoxo <sarah.tollemache@hotmail.com>
+Date:   Wed Jan 8 17:43:25 2025 +1000
+
+    feat: add database schema
+
+[33mcommit 468281d85f9b92d2d2d7414ab90f377bc1f6593f[m
+Author: skezyoxo <sarah.tollemache@hotmail.com>
+Date:   Wed Jan 8 17:43:20 2025 +1000
+
+    feat: add UI components and theme support

@@ -57,11 +57,44 @@ npm run build
 ### 1. Vercel (Recommended)
 
 #### Initial Setup
-1. Connect your GitHub repository to Vercel
-2. Configure environment variables in Vercel dashboard
-3. Set up automatic deployments
+1. Go to [vercel.com](https://vercel.com) and sign in with GitHub
+2. Click "Add New..." > "Project"
+3. Import your GitHub repository (`second-brain-private`)
+4. Configure the following settings:
+   - Build Command: `npm run build` (default)
+   - Output Directory: `.next` (default)
+   - Install Command: `npm install` (default)
 
-#### Deploy
+#### Environment Variables Setup
+1. In the Vercel dashboard, go to Project Settings > Environment Variables
+2. Add the following variables from your `.env` file:
+   - `DATABASE_URL` (Production database connection string)
+   - `JWT_SECRET` (Generate a new secure secret for production)
+   - `NODE_ENV` (Set to "production")
+   - Any other variables from your `.env` file
+
+#### Database Setup
+1. Create a production PostgreSQL database (recommended providers: Vercel Postgres, Supabase, or Railway)
+2. Update `DATABASE_URL` in Vercel environment variables
+3. Run migrations:
+   ```bash
+   # Locally, using production URL
+   npx prisma migrate deploy
+   ```
+
+#### Domain Setup (Optional)
+1. Go to Project Settings > Domains
+2. Add your custom domain
+3. Follow DNS configuration instructions
+4. Update `NEXT_PUBLIC_SITE_URL` in environment variables
+
+#### Deployment
+Vercel will automatically deploy:
+- When you push to `main` branch
+- When you create a PR (preview deployment)
+- When you manually trigger a deployment
+
+Manual deployment options:
 ```bash
 # Using Vercel CLI
 vercel
@@ -69,6 +102,23 @@ vercel
 # Production deployment
 vercel --prod
 ```
+
+#### Post-Deployment Checks
+1. Verify environment variables are set correctly
+2. Check database connection
+3. Test authentication flow
+4. Verify API endpoints
+5. Check application logs in Vercel dashboard
+
+#### Monitoring and Analytics
+1. Enable Vercel Analytics in Project Settings
+2. Set up Error Monitoring (Vercel supports Sentry integration)
+3. Configure Status Alerts for downtime notification
+
+#### Rollback Process
+1. In Vercel dashboard, go to Deployments
+2. Find the last working deployment
+3. Click "..." > "Promote to Production"
 
 ### 2. Docker Deployment
 
