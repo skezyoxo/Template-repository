@@ -38,7 +38,7 @@ A modern, production-ready template for Next.js applications with built-in authe
 
 1. Clone this template:
    ```bash
-   git clone [your-template-url]
+   git clone https://github.com/skezyoxo/Template-repository
    ```
 
 2. Install dependencies:
