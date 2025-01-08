@@ -1,6 +1,7 @@
 # Setup Guide
 
 ## Prerequisites
+
 - Node.js (v18 or higher)
 - npm (comes with Node.js)
 - PostgreSQL (v14 or higher)
@@ -9,7 +10,9 @@
 ## Development Environment Setup
 
 ### 1. Code Editor Setup
+
 We recommend using Visual Studio Code with the following extensions:
+
 - ESLint
 - Prettier
 - Prisma
@@ -17,7 +20,9 @@ We recommend using Visual Studio Code with the following extensions:
 - GitLens (optional)
 
 ### 2. Project Setup
+
 1. Clone the repository
+
    ```bash
    git clone https://github.com/skezyoxo/second-brain-private.git
    cd second-brain-private
@@ -31,6 +36,7 @@ We recommend using Visual Studio Code with the following extensions:
 ### 3. Database Setup
 
 #### PostgreSQL Installation
+
 1. Download and install PostgreSQL from [postgresql.org](https://www.postgresql.org/download/)
 2. During installation:
    - Remember the password you set for the postgres user
@@ -38,6 +44,7 @@ We recommend using Visual Studio Code with the following extensions:
    - Install all offered components
 
 #### Create Database
+
 1. Open pgAdmin (comes with PostgreSQL)
 2. Create a new database:
    - Right-click on 'Databases'
@@ -45,8 +52,10 @@ We recommend using Visual Studio Code with the following extensions:
    - Name it 'second_brain_db' (or your preferred name)
 
 ### 4. Environment Configuration
+
 1. Create a `.env` file in the project root
 2. Add the following configuration:
+
    ```env
    # Database connection
    DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/second_brain_db"
@@ -58,12 +67,15 @@ We recommend using Visual Studio Code with the following extensions:
    ```
 
 ### 5. Database Migration
+
 1. Generate Prisma Client
+
    ```bash
    npx prisma generate
    ```
 
 2. Run migrations
+
    ```bash
    npx prisma migrate dev
    ```
@@ -74,15 +86,19 @@ We recommend using Visual Studio Code with the following extensions:
    ```
 
 ### 6. Start Development Server
+
 ```bash
 npm run dev
 ```
+
 The application will be available at `http://localhost:3000`
 
 ## Common Issues and Solutions
 
 ### Database Connection Issues
+
 1. **Error: Connection refused**
+
    - Check if PostgreSQL is running
    - Verify port number
    - Check credentials in `.env`
@@ -92,7 +108,9 @@ The application will be available at `http://localhost:3000`
    - Check database name in connection string
 
 ### Prisma Issues
+
 1. **Schema Changes Not Reflecting**
+
    ```bash
    npx prisma generate
    npx prisma migrate reset
@@ -104,7 +122,9 @@ The application will be available at `http://localhost:3000`
    ```
 
 ### Node.js Issues
+
 1. **Dependencies Not Found**
+
    ```bash
    rm -rf node_modules
    npm install
@@ -117,7 +137,9 @@ The application will be available at `http://localhost:3000`
 ## Development Workflow
 
 ### 1. Making Changes
+
 1. Create a new branch for your feature
+
    ```bash
    git checkout -b feature/your-feature-name
    ```
@@ -127,6 +149,7 @@ The application will be available at `http://localhost:3000`
 4. Commit changes with meaningful messages
 
 ### 2. Database Changes
+
 1. Modify `schema.prisma`
 2. Generate migration
    ```bash
@@ -134,7 +157,9 @@ The application will be available at `http://localhost:3000`
    ```
 
 ### 3. Testing Changes
+
 1. Run linting
+
    ```bash
    npm run lint
    ```
@@ -146,7 +171,8 @@ The application will be available at `http://localhost:3000`
    ```
 
 ## Additional Resources
+
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Prisma Documentation](https://www.prisma.io/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs) 
+- [TypeScript Documentation](https://www.typescriptlang.org/docs)

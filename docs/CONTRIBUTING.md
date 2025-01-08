@@ -3,6 +3,7 @@
 Thank you for considering contributing to Second Brain! This document outlines the process and guidelines for contributing to this project.
 
 ## Table of Contents
+
 - [Code of Conduct](#code-of-conduct)
 - [Getting Started](#getting-started)
 - [Development Process](#development-process)
@@ -13,9 +14,11 @@ Thank you for considering contributing to Second Brain! This document outlines t
 ## Code of Conduct
 
 ### Our Pledge
+
 We are committed to providing a friendly, safe, and welcoming environment for all contributors.
 
 ### Our Standards
+
 - Be respectful and inclusive
 - Accept constructive criticism gracefully
 - Focus on what's best for the community
@@ -37,6 +40,7 @@ We are committed to providing a friendly, safe, and welcoming environment for al
 ## Development Process
 
 1. **Create a Branch**
+
    ```bash
    git checkout -b feature/your-feature-name
    # or
@@ -44,6 +48,7 @@ We are committed to providing a friendly, safe, and welcoming environment for al
    ```
 
 2. **Branch Naming**
+
    - `feature/` - for new features
    - `fix/` - for bug fixes
    - `docs/` - for documentation
@@ -59,12 +64,14 @@ We are committed to providing a friendly, safe, and welcoming environment for al
 ## Pull Request Process
 
 1. **Before Submitting**
+
    - Update documentation if needed
    - Add tests for new features
    - Run all tests locally
    - Ensure code passes linting
 
 2. **PR Description**
+
    - Clearly describe the changes
    - Reference any related issues
    - Include screenshots for UI changes
@@ -78,26 +85,31 @@ We are committed to providing a friendly, safe, and welcoming environment for al
 ## Coding Standards
 
 ### TypeScript
+
 - Use TypeScript for all new code
 - Maintain strict type checking
 - Document complex types
 
 ### React/Next.js
+
 - Use functional components
 - Implement proper error boundaries
 - Follow React hooks best practices
 
 ### Database
+
 - Follow schema conventions in [DATABASE.md](DATABASE.md)
 - Include database migrations
 - Test migrations both up and down
 
 ### Testing
+
 - Write unit tests for utilities
 - Include integration tests for API endpoints
 - Add E2E tests for critical paths
 
 ### Style Guide
+
 - Use ESLint and Prettier configurations
 - Follow existing code style
 - Use meaningful variable names
@@ -105,6 +117,7 @@ We are committed to providing a friendly, safe, and welcoming environment for al
 ## Commit Messages
 
 ### Format
+
 ```
 type(scope): subject
 
@@ -114,6 +127,7 @@ footer
 ```
 
 ### Types
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation
@@ -123,6 +137,7 @@ footer
 - `chore`: Maintenance
 
 ### Examples
+
 ```
 feat(auth): add JWT authentication
 
@@ -136,17 +151,20 @@ Closes #123
 ## Additional Notes
 
 ### Documentation
+
 - Update README.md if needed
 - Document new features
 - Include JSDoc comments
 - Update API documentation
 
 ### Testing
+
 - Write tests before fixing bugs
 - Include positive and negative test cases
 - Mock external services
 
 ### Security
+
 - Never commit sensitive data
 - Review code for security issues
 - Follow security best practices
@@ -154,8 +172,9 @@ Closes #123
 ## Questions?
 
 If you have questions, please:
+
 1. Check existing documentation
 2. Search for similar issues
 3. Create a new issue with the question
 
-Thank you for contributing! 
+Thank you for contributing!

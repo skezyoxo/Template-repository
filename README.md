@@ -26,23 +26,27 @@ Second Brain Private is a secure and efficient personal knowledge management sys
 ## Quick Start
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/skezyoxo/second-brain-private.git
    cd second-brain-private
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables**
+
    ```bash
    cp .env.example .env
    # Update .env with your database credentials and other configurations
    ```
 
 4. **Set up the database**
+
    ```bash
    npx prisma migrate dev
    ```
@@ -75,6 +79,7 @@ We welcome contributions! Please see our [Contributing Guidelines](./docs/CONTRI
 ## Support
 
 If you encounter any issues or have questions, please:
+
 1. Check the [documentation](./docs)
 2. Create an issue in the repository
 

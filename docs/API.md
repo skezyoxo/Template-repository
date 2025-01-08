@@ -1,12 +1,15 @@
 # API Documentation
 
 ## Overview
+
 This document outlines the API endpoints available in the Second Brain application. All API routes are prefixed with `/api`.
 
 ## Authentication
+
 Most endpoints require authentication using JWT (JSON Web Token).
 
 ### Authentication Header
+
 ```
 Authorization: Bearer <your_jwt_token>
 ```
@@ -16,9 +19,11 @@ Authorization: Bearer <your_jwt_token>
 ### Authentication
 
 #### POST /api/auth/login
+
 Authenticate a user and receive a JWT token.
 
 **Request Body:**
+
 ```json
 {
   "email": "user@example.com",
@@ -27,6 +32,7 @@ Authenticate a user and receive a JWT token.
 ```
 
 **Response:**
+
 ```json
 {
   "token": "jwt_token_here",
@@ -39,9 +45,11 @@ Authenticate a user and receive a JWT token.
 ```
 
 #### POST /api/auth/register
+
 Register a new user.
 
 **Request Body:**
+
 ```json
 {
   "email": "user@example.com",
@@ -53,9 +61,11 @@ Register a new user.
 ### Users
 
 #### GET /api/users/me
+
 Get current user's profile.
 
 **Response:**
+
 ```json
 {
   "id": "uuid",
@@ -71,9 +81,11 @@ Get current user's profile.
 ### Roles and Permissions
 
 #### GET /api/roles
+
 Get all available roles (requires admin permission).
 
 **Response:**
+
 ```json
 {
   "roles": [
@@ -94,6 +106,7 @@ Get all available roles (requires admin permission).
 ## Error Handling
 
 ### Error Response Format
+
 ```json
 {
   "error": {
@@ -105,6 +118,7 @@ Get all available roles (requires admin permission).
 ```
 
 ### Common Error Codes
+
 - `UNAUTHORIZED`: Authentication required or failed
 - `FORBIDDEN`: Insufficient permissions
 - `NOT_FOUND`: Resource not found
@@ -112,6 +126,7 @@ Get all available roles (requires admin permission).
 - `INTERNAL_ERROR`: Server error
 
 ## Rate Limiting
+
 - Rate limit: 100 requests per minute per IP
 - Rate limit headers included in response:
   - `X-RateLimit-Limit`
@@ -119,17 +134,20 @@ Get all available roles (requires admin permission).
   - `X-RateLimit-Reset`
 
 ## API Versioning
+
 - Current version: v1
 - Version is included in the URL: `/api/v1/...`
 - Breaking changes will result in a new version
 
 ## Development and Testing
+
 - Base URL for development: `http://localhost:3000/api`
 - Test environment: `http://staging-api.example.com/api`
 - Production: `https://api.example.com/api`
 
 ## Notes
+
 - All timestamps are in ISO 8601 format
 - All IDs are UUIDs unless specified otherwise
 - Responses are always in JSON format
-- Request body should be JSON with Content-Type: application/json 
+- Request body should be JSON with Content-Type: application/json
