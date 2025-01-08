@@ -17,6 +17,7 @@ This document outlines the process for deploying the Second Brain application to
 - PostgreSQL (v14 or higher)
 - Git
 - Vercel CLI (optional, for Vercel deployment)
+- react-hook-form (for form handling)
 
 ### Access Requirements
 - GitHub repository access
@@ -74,11 +75,17 @@ npm run build
    - Any other variables from your `.env` file
 
 #### Database Setup
-1. Create a production PostgreSQL database (recommended providers: Vercel Postgres, Supabase, or Railway)
-2. Update `DATABASE_URL` in Vercel environment variables
+1. Create a production PostgreSQL database using Neon (https://neon.tech)
+   - Sign up for a Neon account
+   - Create a new project
+   - Create a new database
+   - Get the connection string from the dashboard
+2. Update `DATABASE_URL` in Vercel environment variables with the Neon connection string
+   Format: `postgresql://user:password@endpoint/database?sslmode=require`
 3. Run migrations:
    ```bash
    # Locally, using production URL
+   npx prisma generate
    npx prisma migrate deploy
    ```
 
